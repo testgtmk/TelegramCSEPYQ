@@ -1,7 +1,4 @@
 
-#TELEGRAM_TOKEN = '7253319801:AAHAuw4cdfZujUhVLOp5tgWEzBIg7BivjYs'
-#CHAT_ID = '-1002159466860'
-
 import random
 import telebot
 from dotenv import load_dotenv
