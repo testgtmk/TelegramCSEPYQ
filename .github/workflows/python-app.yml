@@ -1,30 +1,29 @@
-name: Send Message Every Minute
+name: Scheduled Task
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '* * * * *'  # Runs daily at midnight UTC
 
 jobs:
-  send-message:
+  run-job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        pip install python-telegram-bot
 
-      - name: Run the script
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: |
-          python telegramsendmessage.py
+    - name: Run the script
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+      run: |
+        python telegramsendmessage.py
