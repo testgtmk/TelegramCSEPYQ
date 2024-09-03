@@ -2,7 +2,7 @@ name: Send Message Daily
 
 on:
   schedule:
-    - cron: '* * * * *'  # Adjust the cron schedule as needed (runs daily at 12:00 UTC)
+    - cron: '1 * * * *'  # Adjust the cron schedule as needed (runs daily at 12:00 UTC)
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
