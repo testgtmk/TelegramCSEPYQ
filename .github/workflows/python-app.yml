@@ -2,9 +2,8 @@ name: Send Message Daily
 
 on:
   schedule:
-    - cron: '*/2 * * * *'  # Adjust the cron schedule as needed (runs daily at 12:00 UTC)
-  workflow_dispatch:  # Allows manual trigger
-
+    - cron: '* * * * *'  # Adjust the cron schedule as needed (runs daily at 12:00 UTC)
+  
 jobs:
   send-message:
     runs-on: ubuntu-latest
