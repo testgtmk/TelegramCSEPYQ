@@ -2,7 +2,7 @@ name: Scheduled Task
 
 on:
   schedule:
-    - cron: '* * * * *' 
+    - cron: '57 22 * * *' 
 
 jobs:
   run-job:
