@@ -1,4 +1,4 @@
-name: Scheduled Task
+name: CronMaker
 
 on:
   workflow_dispatch:
