@@ -27,7 +27,7 @@ if __name__ == '__main__':
         with open(filename, 'r',encoding="utf-8") as file:
             lines = file.readlines()
             q = random.choice(lines).strip()
-            question += f"{cnt}. {q}\n"
+            question += f"{cnt}. {q}\n\n"
             cnt += 1
         file.close()
     send_message(question)
